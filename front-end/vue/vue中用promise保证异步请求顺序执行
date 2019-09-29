@@ -1,0 +1,26 @@
+let a=function() {
+  return new Promise(function (resolve, reject) {
+    http.put(url, params).then(res => {
+      //TODO
+      resolve();
+    });
+  });
+}
+let b=function() {
+  return new Promise(function (resolve, reject) {
+    http.put(url, params).then(res => {
+       //TODO
+	resolve();
+    });
+  });
+}
+
+// 保证异步顺序执行
+var p = new Promise(function (resolve, reject) {
+  resolve();
+});
+p.then(a)
+  .then(b)
+   .then(function (result) {
+    //TODO
+  });

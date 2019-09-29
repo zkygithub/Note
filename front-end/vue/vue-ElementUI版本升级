@@ -1,0 +1,16 @@
+1.查看是否可以更新
+ps：安装完高效升级插件npm-check-updates之后
+安装方法 npm install -g npm-check-updates
+查看最新的版本：npm-check-updates
+简写：ncu
+
+2.我们看到，提示element-ui可以从当前版本升级到目前官网最新的2.12.0,
+执行ncu -u element-ui 升级全部项目中可升级的包。
+
+3.但实际操作中并没有按照预期的升级成功,检查package.json文件发现版本号已经更新到最新了，
+于是执行npm  install(重新安装或更新element-ui 包), 包的依赖就都更新完毕了。
+
+以下的是因为  element-ui1.4.3 与 element-ui 2.12.0,配置不同
+在main.js中修改新增的 theme-chalk 主题：
+将import 'element-ui/lib/theme-default/index.css'替换为
+import 'element-ui/lib/theme-chalk/index.css'
